@@ -11,72 +11,83 @@
         <h1><i class="fas fa-chart-line"></i> PTN Interface</h1>
         <button id="theme-toggle">Toggle Theme</button>
 
-        <div class="asset-select">
-            <select id="asset">
-                <optgroup label="Crypto">
-                    <option value="BTCUSD">BTC/USD</option>
-                    <option value="ETHUSD">ETH/USD</option>
-                </optgroup>
-                <optgroup label="Forex">
-                    <option value="AUDCAD">AUD/CAD</option>
-                    <option value="AUDUSD">AUD/USD</option>
-                    <option value="AUDJPY">AUD/JPY</option>
-                    <option value="CADCHF">CAD/CHF</option>
-                    <option value="CADJPY">CAD/JPY</option>
-                    <option value="CHFJPY">CHF/JPY</option>
-                    <option value="EURCAD">EUR/CAD</option>
-                    <option value="EURUSD">EUR/USD</option>
-                    <option value="EURCHF">EUR/CHF</option>
-                    <option value="EURGBP">EUR/GBP</option>
-                    <option value="EURJPY">EUR/JPY</option>
-                    <option value="EURNZD">EUR/NZD</option>
-                    <option value="NZDCAD">NZD/CAD</option>
-                    <option value="NZDJPY">NZD/JPY</option>
-                    <option value="GBPUSD">GBP/USD</option>
-                    <option value="GBPJPY">GBP/JPY</option>
-                    <option value="USDCAD">USD/CAD</option>
-                    <option value="USDCHF">USD/CHF</option>
-                    <option value="USDJPY">USD/JPY</option>
-                </optgroup>
-                <optgroup label="Indices">
-                    <option value="SPX">SPX</option>
-                    <option value="DJI">DJI</option>
-                    <option value="FTSE">FTSE</option>
-                    <option value="GDAXI">GDAXI</option>
-                </optgroup>
-            </select>
-            <i class="fas fa-search"></i>
+        <div class="tab-container">
+            <div class="tab-header">
+                <div class="tab active" data-tab="trading">Trading</div>
+                <div class="tab" data-tab="settings">Settings</div>
+                <div class="tab" data-tab="console">Console</div>
+            </div>
+            <div class="tab-content">
+                <div class="tab-pane active" id="trading">
+                    <div class="asset-select">
+                        <select id="asset">
+                            <optgroup label="Crypto">
+                                <option value="BTCUSD">BTC/USD</option>
+                                <option value="ETHUSD">ETH/USD</option>
+                            </optgroup>
+                            <optgroup label="Forex">
+                                <option value="AUDCAD">AUD/CAD</option>
+                                <option value="AUDUSD">AUD/USD</option>
+                                <option value="AUDJPY">AUD/JPY</option>
+                                <option value="CADCHF">CAD/CHF</option>
+                                <option value="CADJPY">CAD/JPY</option>
+                                <option value="CHFJPY">CHF/JPY</option>
+                                <option value="EURCAD">EUR/CAD</option>
+                                <option value="EURUSD">EUR/USD</option>
+                                <option value="EURCHF">EUR/CHF</option>
+                                <option value="EURGBP">EUR/GBP</option>
+                                <option value="EURJPY">EUR/JPY</option>
+                                <option value="EURNZD">EUR/NZD</option>
+                                <option value="NZDCAD">NZD/CAD</option>
+                                <option value="NZDJPY">NZD/JPY</option>
+                                <option value="GBPUSD">GBP/USD</option>
+                                <option value="GBPJPY">GBP/JPY</option>
+                                <option value="USDCAD">USD/CAD</option>
+                                <option value="USDCHF">USD/CHF</option>
+                                <option value="USDJPY">USD/JPY</option>
+                            </optgroup>
+                            <optgroup label="Indices">
+                                <option value="SPX">SPX</option>
+                                <option value="DJI">DJI</option>
+                                <option value="FTSE">FTSE</option>
+                                <option value="GDAXI">GDAXI</option>
+                            </optgroup>
+                        </select>
+                        <i class="fas fa-search"></i>
+                    </div>
+                    <div class="leverage">
+                        <label for="leverage-input">Leverage:</label>
+                        <input type="text" id="leverage-input" value="1" size="3">
+                        <input type="range" id="leverage-slider" min="1" max="100" value="1">
+                    </div>
+                    <div class="actions">
+                        <button id="long" class="action-button green"><i class="fas fa-arrow-up"></i> Long</button>
+                        <button id="flat" class="action-button grey"><i class="fas fa-arrows-alt-h"></i> Flat</button>
+                        <button id="short" class="action-button red"><i class="fas fa-arrow-down"></i> Short</button>
+                    </div>
+                    <div id="status">Ready</div>
+                </div>
+                <div class="tab-pane" id="settings">
+                    <h2><i class="fas fa-cog"></i> Settings</h2>
+                    <div class="config-group">
+                        <label for="api_key">API Key:</label>
+                        <input type="text" id="api_key" size="40">
+                    </div>
+                    <div class="config-group">
+                        <label for="server_url">Server URL:</label>
+                        <input type="text" id="server_url" size="40">
+                    </div>
+                    <div class="config-actions">
+                        <button id="save"><i class="fas fa-save"></i> Save</button>
+                        <button id="reset"><i class="fas fa-undo"></i> Reset</button>
+                    </div>
+                </div>
+                <div class="tab-pane" id="console">
+                    <h2><i class="fas fa-terminal"></i> Console</h2>
+                    <div class="console-content"></div>
+                </div>
+            </div>
         </div>
-        <div class="leverage">
-            <label for="leverage-input">Leverage:</label>
-            <input type="text" id="leverage-input" value="1" size="3">
-            <input type="range" id="leverage-slider" min="1" max="100" value="1">
-        </div>
-        <div class="actions">
-            <button id="long" class="action-button green"><i class="fas fa-arrow-up"></i> Long</button>
-            <button id="flat" class="action-button grey"><i class="fas fa-arrows-alt-h"></i> Flat</button>
-            <button id="short" class="action-button red"><i class="fas fa-arrow-down"></i> Short</button>  
-        </div>
-        <div id="status">Ready</div>
-        
-        <h2><i class="fas fa-cog"></i> Settings</h2>
-        <div class="config-group">
-            <label for="api_key">API Key:</label>
-            <input type="text" id="api_key" size="40">
-        </div>
-        <div class="config-group">
-            <label for="server_url">Server URL:</label>
-            <input type="text" id="server_url" size="40"> 
-        </div>
-        <div class="config-actions">
-            <button id="save"><i class="fas fa-save"></i> Save</button>
-            <button id="reset"><i class="fas fa-undo"></i> Reset</button>
-        </div>
-
-        <div id="console">
-            <div class="console-content"></div>
-        </div>
-
     </div>
 
     <script src="popup.js"></script>
