@@ -12,7 +12,7 @@ To install, first download the repo, go to "Extensions" in a chromium based brow
 
 1: Config
 
-Set API key to the api key set in mining secrets on your signals server. Set URL to ```http://{your_server_url}/api/receive-signal``` then hit save.
+Set API key to the api key set in mining secrets on your signals server. Set URL to ```http://{your_server_url}/api/receive-signal``` then hit save. Make sure your signal receiving server is running on an open http port. 8080 is recommended.
 
 
 Now you are good to start sending trades to your server, you can easily use the interface to make market trades on any asset. Future iterations will include the option for limit orders as well.
