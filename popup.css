@@ -284,3 +284,55 @@ button:hover {
 .light-mode .console-content {
     color: var(--light-text-color);
 }
+/* ... (existing styles) ... */
+
+.tab-container {
+    margin-top: 20px;
+}
+
+.tab-header {
+    display: flex;
+    border-bottom: 1px solid var(--dark-border-color);
+}
+
+.light-mode .tab-header {
+    border-color: var(--light-border-color);
+}
+
+.tab {
+    padding: 10px 20px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.tab:hover {
+    background-color: var(--dark-secondary-color);
+}
+
+.light-mode .tab:hover {
+    background-color: var(--light-secondary-color);
+}
+
+.tab.active {
+    background-color: var(--dark-secondary-color);
+    border-bottom: 2px solid var(--dark-accent-color);
+}
+
+.light-mode .tab.active {
+    background-color: var(--light-secondary-color);
+    border-color: var(--light-accent-color);
+}
+
+.tab-content {
+    padding: 20px;
+}
+
+.tab-pane {
+    display: none;
+}
+
+.tab-pane.active {
+    display: block;
+}
+
+/* ... (additional styles for improved appearance) ... */
