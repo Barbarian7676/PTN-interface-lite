@@ -1,7 +1,7 @@
 # PTN-interface-lite
 A lite interface for human-trader interaction with the PTN.
-![image](https://github.com/Barbarian7676/PTN-interface-lite/assets/153689947/834f6133-dc46-47c3-b5de-53df5e670a4b)
 
+![image](https://github.com/Barbarian7676/PTN-interface-lite/assets/153689947/246c3962-c241-4df1-b4ef-faea552b9c4a)
 
 # Installation
 
