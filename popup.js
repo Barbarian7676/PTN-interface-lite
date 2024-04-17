@@ -117,7 +117,19 @@ document.querySelectorAll('#long, #short, #flat').forEach(button => {
     });
 });
 
-// Add the theme toggle functionality
+document.querySelectorAll('.tab').forEach(tab => {
+    tab.addEventListener('click', function() {
+        const tabId = this.getAttribute('data-tab');
+        
+        document.querySelectorAll('.tab').forEach(tab => tab.classList.remove('active'));
+        document.querySelectorAll('.tab-pane').forEach(pane => pane.classList.remove('active'));
+
+        this.classList.add('active');
+        document.getElementById(tabId).classList.add('active');
+    });
+});
+
+
 document.getElementById('theme-toggle').addEventListener('click', function() {
     document.body.classList.toggle('light-mode');
     saveSettings();
