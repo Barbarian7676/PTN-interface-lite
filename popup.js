@@ -108,7 +108,6 @@ document.querySelectorAll('#long, #short, #flat').forEach(button => {
         const tradePair = document.getElementById('asset').value;
         let leverage = document.getElementById('leverage-input').value;
 
-        // Check if the order type is FLAT and set leverage to 0
         if (orderType === 'FLAT') {
             leverage = 0;
         }
